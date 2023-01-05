@@ -1,0 +1,19 @@
+{
+  "name": "Instagram modification Chrome Extension", 
+  "description": "Simple Instagram modification Chrome Extension", 
+  "version": "1.0",
+  "manifest_version": 3, 
+  "background": {
+      "service_worker": "background.js"
+  },
+  "permissions": ["storage", "activeTab", "contextMenus"],
+  "action": {
+      "default_popup": "popup.html"
+  }, 
+  "content_scripts": [
+      {
+          "matches": ["https://*.instagram.com/reels/videos/*"],
+          "js": ["content.js"]
+      }
+  ]
+}
